@@ -11,7 +11,6 @@ permissions:
 
 jobs:
   publish-node:
-    if: ${{ github.repository_owner == 'YOUR_USERNAME' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

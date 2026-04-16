@@ -47,8 +47,6 @@ class ExampleImageNode(io.ComfyNode):
 
     @classmethod
     def validate_inputs(cls, image, model_config, strength, seed, mask=None):
-        if strength == 0.0:
-            return "Strength cannot be 0."
         return True
 
     @classmethod

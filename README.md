@@ -1,67 +1,34 @@
-# ComfyUI My Nodes
+# ComfyUI Custom Node Template
 
-[![GitHub Stars](https://img.shields.io/github/stars/YOUR_USERNAME/ComfyUI-MyNodes?style=flat)](https://github.com/YOUR_USERNAME/ComfyUI-MyNodes/stargazers)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/)
+Template repository for building ComfyUI custom node packages with the V3 API.
 
-Short one-line description of what your nodes do.
+Use [README.md.example](/home/wswg3/project/comfyui-template/README.md.example) as the starting point for the actual project README in repositories created from this template.
 
----
+## What This Template Includes
 
-## Nodes
+- V3 `ComfyExtension` entrypoint in [`__init__.py`](/home/wswg3/project/comfyui-template/__init__.py)
+- example loader, processing, and output nodes in [`nodes/`](/home/wswg3/project/comfyui-template/nodes)
+- optional `comfy_env` integration with a safe `pip` fallback in [`install.py`](/home/wswg3/project/comfyui-template/install.py) and [`prestartup_script.py`](/home/wswg3/project/comfyui-template/prestartup_script.py)
+- package metadata in [`pyproject.toml`](/home/wswg3/project/comfyui-template/pyproject.toml)
+- registry publish workflow in [publish.yml](/home/wswg3/project/comfyui-template/.github/workflows/publish.yml)
 
-| Node | Description |
-|---|---|
-| **Load My Model** | Downloads and loads the model with automatic precision detection. |
-| **Example Image Node** | Processes an image using the loaded model. |
-| **Save My Image** | Saves output images to the ComfyUI output folder. |
+## How To Use This Repo
 
----
+1. Copy this template into a new repository.
+2. Update placeholders in `pyproject.toml`, the node files, and workflow metadata.
+3. Use `README.md.example` as the base for your real project `README.md`.
+4. Replace the example node logic with your actual model or processing code.
 
-## Installation
+## Notes
 
-### ComfyUI Manager (recommended)
+- `README.md` describes the template repo itself.
+- `README.md.example` is the end-user README template for future projects created from this repo.
 
-1. Open **ComfyUI Manager**
-2. Search for `My Nodes`
-3. Click **Install** → restart ComfyUI
+## License
 
-### Manual
+This repository is licensed under the MIT License. See [LICENSE](/home/wswg3/project/comfyui-template/LICENSE).
 
-```bash
-cd ComfyUI/custom_nodes
-git clone https://github.com/YOUR_USERNAME/ComfyUI-MyNodes
-```
+## Acknowledgements
 
-Restart ComfyUI. Dependencies install automatically on first run.
-
----
-
-## Requirements
-
-- ComfyUI (latest)
-- GPU with 8 GB+ VRAM recommended
-- Model downloads automatically from HuggingFace on first use (~X GB)
-
----
-
-## Usage
-
-1. Add **Load My Model** → connect `model_config` to **Example Image Node**
-2. Connect an image source
-3. Optionally attach **Save My Image** to write results to disk
-
-Example workflows are in the [`workflows/`](workflows/) folder.
-
----
-
-## Support
-
-- Open a [GitHub Discussion](https://github.com/YOUR_USERNAME/ComfyUI-MyNodes/discussions) for questions
-- File bugs via [GitHub Issues](https://github.com/YOUR_USERNAME/ComfyUI-MyNodes/issues)
-
----
-
-## Credits
-
-- [Model Name](https://arxiv.org/abs/XXXX.XXXXX) — Paper title (Conference Year)
+- PozzettiAndrea's ComfyUI tooling and workflow conventions were used as references for parts of this template, especially around `comfy_env`, `comfy-test`, and maintainer guidance structure.
+- [jtydhr88/comfyui-custom-node-skills](https://github.com/jtydhr88/comfyui-custom-node-skills) was also used as a reference.
